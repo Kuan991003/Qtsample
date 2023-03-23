@@ -6,10 +6,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    //リンゴ画像を入れる
+    applescence = new QGraphicsScene();
+    ui->graphicsView->setScene(applescence);
+    QPixmap pixmap(":/res/fruit_ringo.png");
+    applescence->addPixmap(pixmap);
 }
 
 MainWindow::~MainWindow()
 {
+    delete applescence;
     delete ui;
 }
 

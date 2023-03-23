@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->graphicsView->setScene(applescence);
     QPixmap pixmap(":/res/fruit_ringo.png");
     applescence->addPixmap(pixmap);
+    //正解不正解文字列の初期化
+    ui->labeljudge->setText("");
 }
 
 MainWindow::~MainWindow()
@@ -23,14 +25,20 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_melon_clicked()
 {
     qDebug()<< "melon clicked()!";
+
+    //間違い表示
+    ui->labeljudge->setText("worng");
 }
 
 void MainWindow::on_pushButton_apple_clicked()
 {
     qDebug()<< "apple clicked()!";
+    ui->labeljudge->setText("correct");
 }
 
 void MainWindow::on_PushButton_strawbery_clicked()
 {
     qDebug() << "strawbery clicked()!";
+    //間違い表示
+    ui->labeljudge->setText("worng");
 }
